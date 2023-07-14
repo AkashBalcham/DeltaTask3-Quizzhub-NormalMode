@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/top.ejs')%>
+<body>
+    <%- include('../partials/home-head.ejs')%>
+
+    <h1 style = "margin-left: 20px; margin-top: 75px;"><%= sUser%>'s Quizzes</h1>
+
+    <div style = "margin-left: 20px; font-size: 23px;" class = "user-created-quiz">
+        <% sQuizLst.forEach(quiz => { %>
+            <div class = "user-quizzes">
+                <div style = "width: 200px;"><p><%= quiz.quiz_name%></p></div>
+                <div><a href="/quizzes/<%= quiz.quiz_id%>"><button class = "take-quiz-button">Take quiz</button></a></div>
+            </div>
+        <% }) %> 
+
+    </div>
+
+    
+
+    <%- include('../partials/footer.ejs')%>
+</body>
+</html>
